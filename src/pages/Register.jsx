@@ -13,7 +13,7 @@ function Register() {
         console.log(value)
         try {
           setIsLoading(true);
-          let response = await axios.post("http://localhost:8000/user/register", value);
+          let response = await axios.post("https://practicaltest-sepia.vercel.app/user/register", value);
           alert(response.data.message);
           navigate("user/register")
           setIsLoading(false);

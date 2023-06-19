@@ -25,7 +25,7 @@ function Home() {
   
 
   const fetchContent = async () => {
-    let response = await axios.get(`http://localhost:8000/auth`)
+    let response = await axios.get(`https://practicaltest-sepia.vercel.app/auth`)
     setContent(response.data)
   }
 
@@ -58,7 +58,7 @@ function Home() {
 
   const deleteContent = async (id_produk) => {
   const requestBody = {id_produk}
-    await axios.post(`http://localhost:8000/auth/delete`, requestBody)
+    await axios.post(`https://practicaltest-sepia.vercel.app/auth/delete`, requestBody)
     .then((response)=> {
       alert(response.data.message)
       fetchContent();
@@ -82,7 +82,7 @@ function Home() {
       formData.append("data", JSON.stringify(obj));
 
       const response = await axios.post(
-        "http://localhost:8000/upload",
+        "https://practicaltest-sepia.vercel.app/upload",
         formData
       );
       if (!response.error) {
@@ -95,7 +95,7 @@ function Home() {
 
   const addContent = async () => {
     await axios
-      .post("http://localhost:8000/auth/add", product)
+      .post("https://practicaltest-sepia.vercel.app/auth/add", product)
       .then((response) => {
         console.log(response.data)
         alert(response.data.message)
@@ -108,7 +108,7 @@ function Home() {
     const updatedProduct = {...product, id_produk: idProduk}
 
     await axios
-    .put("http://localhost:8000/auth/update", updatedProduct)
+    .put("https://practicaltest-sepia.vercel.app/auth/update", updatedProduct)
     .then((response) => {
       alert(response.data.message)
       fetchContent()
@@ -131,7 +131,7 @@ function Home() {
   useEffect(()=>{
     const getProduct = async () => {
       await axios
-      .get(`http://localhost:8000/auth/${idProduk}`)
+      .get(`https://practicaltest-sepia.vercel.app/auth/${idProduk}`)
       .then((response) => {
         const produk = response.data;
         console.log(response)
@@ -158,7 +158,7 @@ function Home() {
       <div style={{marginBottom: "24px"}} className='mx-6 my-4'>
         <div className='group-relative'>
             <img style={{ padding: "0 700px"}}
-            src={'http://localhost:8000' + data.foto_barang}
+            src={'https://practicaltest-sepia.vercel.app' + data.foto_barang}
             alt=''
             className='max-h-80 h-full w-full p-80 object-cover object-center lg:h-full lg:w-full mb-5'/>
           <div

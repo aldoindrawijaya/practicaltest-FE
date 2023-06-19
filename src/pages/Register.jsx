@@ -6,17 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
 
-    const [isLoading, setIsLoading] = useState();
     const navigate = useNavigate();
 
     const registerUser = async (value) => {
         console.log(value)
         try {
-          setIsLoading(true);
-          let response = await axios.post("http://localhost:8000/user/register", value);
+          let response = await axios.post("https://practicaltest-sepia.vercel.app//user/register", value);
           alert(response.data.message);
           navigate("user/register")
-          setIsLoading(false);
         } catch (error) {}
       };
 
@@ -51,40 +48,40 @@ function Register() {
                       <input type="hidden" name="remember" defaultValue="true" />
                       <div className="-space-y-px rounded-md shadow-sm">
                         <div>
-                          <label htmlFor="Email" className="sr-only">
+                          <label htmlFor="email" className="sr-only">
                             Email
                           </label>
                           <Field
-                            id="Email"
-                            name="Email"
-                            type="Email"
-                            autoComplete="Email"
+                            id="email"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
                             required
                             className="relative block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="Email"
+                            placeholder="email"
                           />
                           <ErrorMessage
                             component="div"
-                            name="Email"
+                            name="email"
                             style={{ color: "red", fontSize: "12px" }}
                           />
                         </div>
                         <div>
-                          <label htmlFor="Password" className="sr-only">
+                          <label htmlFor="password" className="sr-only">
                             Password
                           </label>
                           <Field
-                            id="Password"
-                            name="Password"
-                            type="Password"
-                            autoComplete="Password"
+                            id="password"
+                            name="password"
+                            type="password"
+                            autoComplete="password"
                             required
                             className="relative block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="Password"
+                            placeholder="password"
                           />
                           <ErrorMessage
                             component="div"
-                            name="Password"
+                            name="password"
                             style={{ color: "red", fontSize: "12px" }}
                           />
                         </div>

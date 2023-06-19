@@ -25,7 +25,11 @@ function Home() {
   
 
   const fetchContent = async () => {
+<<<<<<< HEAD
     let response = await axios.get(`https://practicaltest-sepia.vercel.app//auth`)
+=======
+    let response = await axios.get(`https://practicaltest-sepia.vercel.app/auth`)
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
     setContent(response.data)
   }
 
@@ -58,7 +62,11 @@ function Home() {
 
   const deleteContent = async (id_produk) => {
   const requestBody = {id_produk}
+<<<<<<< HEAD
     await axios.post(`https://practicaltest-sepia.vercel.app//auth/delete`, requestBody)
+=======
+    await axios.post(`https://practicaltest-sepia.vercel.app/auth/delete`, requestBody)
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
     .then((response)=> {
       alert(response.data.message)
       fetchContent();
@@ -82,7 +90,11 @@ function Home() {
       formData.append("data", JSON.stringify(obj));
 
       const response = await axios.post(
+<<<<<<< HEAD
         "https://practicaltest-sepia.vercel.app//upload",
+=======
+        "https://practicaltest-sepia.vercel.app/upload",
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
         formData
       );
       if (!response.error) {
@@ -95,7 +107,11 @@ function Home() {
 
   const addContent = async () => {
     await axios
+<<<<<<< HEAD
       .post("https://practicaltest-sepia.vercel.app//auth/add", product)
+=======
+      .post("https://practicaltest-sepia.vercel.app/auth/add", product)
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
       .then((response) => {
         console.log(response.data)
         alert(response.data.message)
@@ -108,7 +124,11 @@ function Home() {
     const updatedProduct = {...product, id_produk: idProduk}
 
     await axios
+<<<<<<< HEAD
     .put("https://practicaltest-sepia.vercel.app//auth/update", updatedProduct)
+=======
+    .put("https://practicaltest-sepia.vercel.app/auth/update", updatedProduct)
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
     .then((response) => {
       alert(response.data.message)
       fetchContent()
@@ -131,7 +151,11 @@ function Home() {
   useEffect(()=>{
     const getProduct = async () => {
       await axios
+<<<<<<< HEAD
       .get(`https://practicaltest-sepia.vercel.app//auth/${idProduk}`)
+=======
+      .get(`https://practicaltest-sepia.vercel.app/auth/${idProduk}`)
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
       .then((response) => {
         const produk = response.data;
         console.log(response)
@@ -158,7 +182,11 @@ function Home() {
       <div style={{marginBottom: "24px"}} className='mx-6 my-4'>
         <div className='group-relative'>
             <img style={{ padding: "0 700px"}}
+<<<<<<< HEAD
             src={'https://practicaltest-sepia.vercel.app/' + data.foto_barang}
+=======
+            src={'https://practicaltest-sepia.vercel.app' + data.foto_barang}
+>>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
             alt=''
             className='max-h-80 h-full w-full p-80 object-cover object-center lg:h-full lg:w-full mb-5'/>
           <div

@@ -11,11 +11,7 @@ function Login() {
 
     const loginUser =  async (data) => {
     
-<<<<<<< HEAD
-    const response = await axios.post("https://practicaltest-sepia.vercel.app//user/login", data);
-=======
     const response = await axios.post("https://practicaltest-sepia.vercel.app/user/login", data);
->>>>>>> 5c8dc17f55058dec9d30f46b895efd38e60dd847
     if (response.data.success) {
       console.log(response.data);
       localStorage.setItem("user_token", response.data.token);

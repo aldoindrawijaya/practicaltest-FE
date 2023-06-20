@@ -13,7 +13,7 @@ function Register() {
         try {
           let response = await axios.post("https://practicaltest-sepia.vercel.app/user/register", value);
           alert(response.data.message);
-          navigate("user/register")
+          navigate("user/login")
         } catch (error) {}
       };
 
